@@ -1,0 +1,923 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+  <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.3/chosen.min.css" rel="stylesheet"/>
+</head>
+
+<div class="container">
+
+  <div class="card">
+    <h5 class="card-header bg-primary text-white">Instructions</h5>
+    <div class="card-body bg-light">
+      <div class="row">
+        <div class="col-12">
+          <h3>Short Instructions</h3>
+          You will be acting as a content moderator by determining whether a post should be allowed, hidden, or blocked from the service. Please answer with your opinion, and we will not judge you for your answers. 
+          If you do not understand a post, please still answer the questions to the best of your abilities. <br> <br>
+          <p><strong>Participation restriction</strong>: providers/turkers for this task cannot currently be employed by or a student at the University of Washington.</p>
+          <p><em>This should take about 20-25 minutes</em>.</p>
+        </div>
+        <div class="col-8">
+
+		<h4>The questions, their purpose, and how to answer</h4>
+		<ol>
+
+			<li> <b> How visible should this post be to a reader? </b> </li> <br>
+
+			We are trying to simulate the questions a content moderator would have here. <br>
+
+      If you want a post to be <b> Easy to View</b>, you don't find the content offensive and believe that anyone should be able to view it. <todo> Do I add this? Please assume all viewers of 
+        this content are 13+.  </todo>. <br><br>
+        
+        If you are <b> Moderate </b> about the content, you believe that the content is offensive, but you think users should be able to determine 
+        for themselves if they want to view the content. ("Hiding" a post means the users will be given a warning message about the hateful nature of the post before viewing the content.) <br><br>
+
+        If you believe the content should be <b> Impossible </b> to view, you think the post is hateful enough to qualify as hate speech, which should be blocked from the site, meaning users 
+        will not be able to view this content.  <br> <br>
+
+      This is a Lickert Scale question with that there are 5 different input options. If your opinion falls between two of the opinions stated above, select the button 
+      in between the 2 opinions.
+
+			<li> What would you flag in this post as offensive? </li> <br>
+
+			Content moderators must justify each of their decisions by pointing to where in the companies policy that content was considered inappropriate to make sure moderators are not violating user's right to free speech.
+
+			<br> <br>
+			
+			You should use this question to add tags for each minority group offended. Please be as thorough as possible - there is no limit on the amount of groups you can tag. 
+      If you want to add a new group, simply type it into the search bar provided and press "tab" or "enter" (you will be prompted to do so by the search bar).
+		</ol>
+        <p>
+          <strong style="color:red;">Content warning:</strong>
+          posts were found on the (uncensored) internet; while it's crucial for us to use them in this study, we do not endorse any of the stereotypes or offensive/immoral/rude material. You may find some of the content upsetting! </p>
+        </div>
+        <div class="col-4 small">
+            <strong>Background</strong>
+            <p>At the University of Washington, we care deeply about the internet being a safe place for all people. Content Moderation is the practice of viewing posts on a open source site and making decisions about whether the content is safe for viewers. This includes blocking traumatizing, racist, and toxic content (while still allowing users the most free speech possible). Content moderators are given the difficult job of going through millions of annotations a week, where they are given very little leeway for mistakes. These moderators are given very long strict hours without break in which they make these decisions, and many content moderators view so much violent and traumatic content that many employees are developing PTSD-like symptoms after leaving the company.</p>
+
+            <p>We want to see if giving content moderators the added support of a model's predictions can help make their work a little simpler. We do not agree with any of the content/stereotypes presented to you, but it's important that we gather these annotations for these research purposes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br><br>
+  <h3> Examples of Answers </h3>
+  <h6> Hover over the cards to see example responses and explanations! </h6>
+
+  <div class="flip-card-container">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="tweet-wrap">
+            <div class="tweet-header">
+              <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="" class="avator">
+              <div class="tweet-header-info">
+                Anonymous <span>@Anon</span><span>. Jun 27
+          </span>
+                <p>This is not a hateful post at all! It offends nobody and therefore should be allowed.</p>
+                
+              </div>
+              
+            </div>
+            <div class="tweet-info-counts">
+              
+              <div class="comments">
+                
+                <svg class="feather feather-message-circle sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                <div class="comment-count">33</div>
+              </div>
+              
+              <div class="retweets">
+                <svg class="feather feather-repeat sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
+                <div class="retweet-count">397</div>
+              </div>
+              
+              <div class="likes">
+                <svg class="feather feather-heart sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                <div class="likes-count">
+                  2.6k
+                </div>
+              </div>
+              
+              <div class="message">
+                <svg class="feather feather-send sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <form>
+          <ul class='likert'>
+            <li>
+            <input type="radio" name="likert" value="view" checked="checked">
+            <label>Easy to View</label>
+            </li>
+            <li>
+            <input type="radio" name="likert" value="view" disabled>
+            </li>
+            <li>
+            <input type="radio" name="likert" value="hide" disabled>
+            <label>Moderate - Prefer to be hidden</label>
+            </li>
+            <li>
+            <input type="radio" name="likert" value="hide" disabled>
+            </li>
+            <li>
+            <input type="radio" name="likert" value="hide" disabled>
+            <label>Impossible - Prefer to be Blocked</label>
+            </li>
+          </ul>
+        </form>
+          <p>Groups Offended: N/A </p>
+          <h4> Explanation: </h4>
+        </div>
+      </div>
+      </div>
+    
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <!-- <h2> Example Post </h2> -->
+
+          <div class="tweet-wrap">
+            <div class="tweet-header">
+              <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="" class="avator">
+              <div class="tweet-header-info">
+                Anonymous <span>@Anon</span><span>. Jun 27
+          </span>
+                <p>This is pretty rude. It should be definitely hidden and some people may even say it should be blocked.</p>
+                
+              </div>
+              
+            </div>
+            <div class="tweet-info-counts">
+              
+              <div class="comments">
+                
+                <svg class="feather feather-message-circle sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                <div class="comment-count">33</div>
+              </div>
+              
+              <div class="retweets">
+                <svg class="feather feather-repeat sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
+                <div class="retweet-count">397</div>
+              </div>
+              
+              <div class="likes">
+                <svg class="feather feather-heart sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                <div class="likes-count">
+                  2.6k
+                </div>
+              </div>
+              
+              <div class="message">
+                <svg class="feather feather-send sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card-back">
+          <form>
+          <ul class='likert'>
+            <li>
+            <input type="radio" name="likert" value="view" disabled>
+            <label>Easy to View</label>
+            </li>
+            <li>
+            <input type="radio" name="likert" value="view" disabled>
+            </li>
+            <li>
+            <input type="radio" name="likert" value="hide" disabled>
+            <label>Moderate - Prefer to be hidden</label>
+            </li>
+            <li>
+            <input type="radio" name="likert" value="hide" checked="checked">
+            </li>
+            <li>
+            <input type="radio" name="likert" value="hide" disabled>
+            <label>Impossible - Prefer to be Blocked</label>
+            </li>
+          </ul>
+        </form>
+          <p>Groups Offended: African Americans, Women, Immigrants </p>
+          <h4> Explanation: </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-3">    
+    <div class="row justify-content-center" id="consent-div">
+      <div class="col-12 mt-4">
+        <h5>Consent to the task</h5>
+        <div class="form-check">
+          <small><p>
+            <strong>Data collection and sharing:</strong> During the project we will collect your Mechanical Turk ID, and may collect personal information about you such as age, gender, and race/ethnicity. We will not ask you for your name, or any other identifiable information. The personal information and other data collected during this project will be used primarily to perform research for purposes described in the introduction above.  Such information and data, or the results of the research may eventually be used to develop and improve our commercial products, services or technologies. By checking the box below, you are attesting that you've had time to read and consider this consent form and are comfortable with what is being asked of you as a participant. 
+            We will securely store the data on our servers. We will not share your MTurk IDs outside of the research team.
+            </p><p>
+            If you have concerns, questions, or strong negative reactions to some of the content, please either email us (Sravani Nanduri at nandsra@cs.washington.edu, Maarten Sap at msap@cs.washington.edu, or Professor Yejin Choi at yejin@cs.washington.edu) or reach out if in crisis.</p></small>
+          <label class="form-check-label" for="consent">
+            <input class="form-check-input" type="checkbox" id="consent" name="consent" onclick="toggleConsent(this.checked);" required>
+            By ticking this box, you certify that you have <strong>read</strong> and <strong>understood</strong> the instructions, and have <strong>read</strong> and <strong>agree</strong> with the terms of this study.
+          </label>
+        </div>
+        <br>
+        <div class="alert alert-warning" id="consent-message" style="max-width: 400px;margin: auto;">
+          You must check the box to continue the task!
+        </div>
+
+    </div>
+    <div id="main-task" style="display: none;">
+      
+      <div class="row justify-content-center" >
+        <div class="col-11 section" id="step1">
+          <h4><label for="story">Step 1: Read posts and determine whether to moderate them</label></h4>
+
+          <div id="story-slider-X" style="display: block;">
+            <div class="row justify-content-center" id="task-X" style="display: block;">
+              <div class="story-display row">
+                <div class="col-7">
+                  <p class="post-X">${post-X}</p>
+                  <p class="targetGroup-X">${targetGroup-X}</p>
+                  <p class="stereotype-X">${stereotype-X}</p>
+                </div>
+                <div class="col-5" style="display: grid;">
+              
+					<form action="">
+			<label class="statement"> How visible should this post be to a reader? </label>
+				<ul class='likert'>
+				  <li>
+					<input type="radio" name="likert" value="view" onClick="hideShowDropdown('view');">
+					<label>Easy to View</label>
+				  </li>
+				  <li>
+					<input type="radio" name="likert" value="view" onClick="hideShowDropdown('view');">
+				  </li>
+				  <li>
+					<input type="radio" name="likert" value="hide" onClick="hideShowDropdown('hide');">
+					<label>Moderate - Prefer to be hidden</label>
+				  </li>
+				  <li>
+					<input type="radio" name="likert" value="hide" onClick="hideShowDropdown('hide');">
+				  </li>
+				  <li>
+					<input type="radio" name="likert" value="hide" onClick="hideShowDropdown('hide');">
+					<label>Impossible - Prefer to be Blocked</label>
+				  </li>
+				</ul>
+		  </form>
+
+      <!-- NO CHANGE -->
+      <form action="http://httpbin.org/post" method="post">
+        <label class="statement"> This post target/references: </label>
+        <select data-placeholder="Begin typing a name to filter..." multiple class="chosen-select" name="test">
+          <option value=""></option>
+          <option>African Americans</option>
+          <option>LGBTQ+</option>
+          <option>Women</option>
+          <option>Immigrants</option>
+          <option>Jewish people</option>
+        </select>
+        <!-- <input type="submit"> -->
+      </form>
+                
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="col-10">
+          <form>
+            <div class="form-group">
+              <input type="range" class="form-control-range" id="progressBar" disabled>
+            </div>
+          </form>
+        </div>
+        <div class="col-1">
+          
+          <div><span id="post-counter">1</span> / <span id="nb-posts"></span></div>
+        </div>
+        <div class="col-1">
+          <button type="button" class="btn btn-primary" onclick="nextPost();">Next post</button>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-11 section" id="step2">
+          <h4>Step 2: Answer questions about the task</h4>
+		  
+		  <form action="">
+			<label class="statement">How useful were the model generations?</label>
+			<ul class='likert'>
+			  <li>
+				<input type="radio" name="likert" value="strong_agree">
+				<label>Very Helpful</label>
+			  </li>
+			  <li>
+				<input type="radio" name="likert" value="strong_agree">
+				<label>Somewhat Helpful</label>
+			  </li>
+			  <li>
+				<input type="radio" name="likert" value="strong_agree">
+				<label>Neutral</label>
+			  </li>
+			  <li>
+				<input type="radio" name="likert" value="disagree">
+				<label>Not very Helpful</label>
+			  </li>
+			  <li>
+				<input type="radio" name="likert" value="strong_agree">
+				<label>Very Unhelpful</label>
+			  </li>
+			</ul>
+			<label class="statement"> Why was the model useful? </label>
+			<input type="text"/>
+		  </form>
+		  
+        </div>
+      </div>
+      
+
+
+      <div class="row justify-content-center">
+        <div class="col-11 section">
+          <h4><label for="summary">Step 3: Tell us about yourself</label></h4>
+          <todo>Check that all the demographic questions you wanted to ask are here</todo>
+          <div class="form-group row mt-3">
+            <label for="gender" class="col-sm-2 col-form-label">Gender identity</label>
+            <div class="col-sm-4">
+              <select id="annotatorGender" name="annotatorGender" class="form-control" style="font-size: .85rem;" required>
+                <option disabled selected value="">-- please select --</option>
+                <option value="man">Man/Male</option>
+                <option value="woman">Woman/Female</option>
+                <option value="nonBinary">Non-binary</option>
+                <option value="other">Other</option>
+                <option value="na">- prefer not to disclose -</option>
+              </select>
+            </div>
+            <div class="col-sm-4"><small>Please select the gender identity you most identify with currently.</small></div>
+          </div>
+          <div class="form-group row">
+            <label for="annotatorAge" class="col-sm-2 col-form-label">Age range</label>
+            <div class="col-sm-4">
+              <select id="annotatorAge" name="annotatorAge" class="form-control" style="font-size: .85rem;" required>
+                <option disabled selected value="">-- please select --</option>
+                <option value="18">18-24</option>
+                <option value="25">25-29</option>
+                <option value="30">30-34</option>
+                <option value="35">35-39</option>
+                <option value="40">40-44</option>
+                <option value="45">45-49</option>
+                <option value="50">50-54</option>
+                <option value="55">55+</option>
+                <option value="na">- prefer not to disclose -</option>
+              </select>
+            </div>
+
+          </div>
+          <div class="form-group row" >
+            <label for="race" class="col-sm-2 col-form-label">Race/ethnicity</label>
+            <div class="col-sm-4">
+              <select id="annotatorRace" name="annotatorRace" class="form-control" style="font-size: .85rem;" required>
+                <option disabled selected value="">-- please select --</option>
+                <option value="asian">Asian/Asian American</option>
+                <option value="indian">South Asian/Indian American</option>
+                <option value="black">Black/African American</option>
+                <option value="hisp">Hispanic/Latinx</option>
+                <option value="white">White/Caucasian</option>
+                <option value="middleEastern">Middle Eastern</option>
+                <option value="islander">Native Hawaiian/Pacific Islander</option>
+                <option value="native">Native American/First Nations</option>
+                <option value="other">Mixed/other</option>
+                <option value="na">- prefer not to disclose -</option>
+              </select>
+            </div>
+            <div class="col-sm-4"><small>Please select the racial/ethnic identity you most identify with currently.</small></div>
+          </div>
+          <div class="form-group row">
+            <div class="col-12">
+              <h6>What best describes your political orientation?</h6>
+              <!--input type="text" id="race" name="annotatorRace" placeholder="" class="form-control"-->
+              <!--select id="annotatorPolitics" name="annotatorPolitics" class="form-control" style="font-size: .85rem;" required>
+                <option disabled selected value="">-- please select --</option>
+                <option value="cons">Conservative</option>
+                <option value="mod-cons">Moderate conservative</option>
+                <option value="mod-liberal">Moderate liberal</option>
+                <option value="liberal">Liberal/progressive</option>
+                <option value="libert">Libertarian</option>
+                <option value="other">Other/independent</option>
+                <option value="na">Prefer not to disclose</option>
+              </select-->
+              <div class="form-check form-check-inline ml-3 lickert">
+                <label class="form-check-label" for="annotatorPolitics1">Strongly liberal &nbsp;</label>
+                <input class="form-check-input right" type="radio" name="annotatorPolitics" id="annotatorPolitics1" value="1" required>
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="annotatorPolitics2">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="annotatorPolitics" id="annotatorPolitics2" value="2">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="annotatorPolitics3">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="annotatorPolitics" id="annotatorPolitics3" value="3">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="annotatorPolitics4">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="annotatorPolitics" id="annotatorPolitics4" value="4">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="annotatorPolitics5">&nbsp;</label>
+                <input class="form-check-input" type="radio" name="annotatorPolitics" id="annotatorPolitics5" value="5">
+                <label class="form-check-label" for="annotatorPolitics5">&nbsp; Strongly conservative</label>
+              </div>  
+            </div>
+          </div>
+          <!--div class="form-group row">
+            <label for="annotatorMinority" class="col-sm-12 col-form-label">
+              Do you identify with any minority, disadvantaged, demographic, or other specific groups? If so, which one(s)?<br>
+              <small>(E.g., racial, gender identity, sexuality, disability, immigrant, veteran, etc.); use commas to separate groups.</small>
+            </label>
+            <div class="col-sm-6">
+              <input type="text" name="annotatorMinority" placeholder="" class="form-control" id="annotatorMinority" style="font-size: .85rem;">
+            </div>
+          </div-->
+          
+        </div>
+      </div>
+      <div class="row justify-content-center mb-4"><div class="col-11 section"></div>
+        <div class="col-8 text-center" style="font-size: 10pt;">
+          <p>
+            Optional Feedback: Thanks for filling out hit above!
+            If something about the hit was unclear, please either leave a comment in the box below!
+            We would like to make this HIT easier for future workers, so we really appreciate feedback though it is optional.
+            If you have concerns or questions, please email us!
+          </p>
+          <textarea id="commentbox" name="commentbox" class="form-control" style="width: 100%;"></textarea><br>
+          <input type="submit" id="submitButton" class="btn btn-primary" value="Submit Hit!"> 
+        </div>
+        <div class="col-6 mt-2 alert alert-danger" id="cantSubmit" style="display: none;">
+          You're missing some questions! Please responded to all questions:
+          <ul>
+            <li>All <strong>event questions</strong> in section 1</li>
+            <li>The <strong>summary</strong> in section 2</li>
+            <li>All <strong>fields</strong> in section 3</li>
+          </ul>
+          <p> If this message keeps popping up, make sure to re-click the event buttons on each story (again).</p>
+        </div>
+      </div>
+    </div>      
+  </div>
+</div>
+
+<script>
+  var curPostIx = 1, totalPosts = 20;
+  $(document).ready(function(){
+    //if (location.host == "homes.cs.washington.edu")
+
+    //$("#sent2-0").show();
+    //$("#sent3-0").show();
+    // curSentIx = 0;
+    
+    // $(".story-length").text(sents.length);
+
+
+
+    var s = $("#story-slider-X").html();
+    var list =  s.split('<!-- NO CHANGE -->');
+    $("#story-slider-X").html(s.replaceAll("-X","-1"));
+    for (let i = 2; i < totalPosts+1; i++) {
+      ss = s.replaceAll("-X","-"+i);
+      $("#story-slider-X").append(ss);
+      $("#task-"+i).hide();
+    }
+    $("#progressBar").val(100*curPostIx / totalPosts);
+    $("#nb-posts").text(totalPosts);
+
+    
+  $(".chosen-select").chosen({
+    no_results_text: "Click Enter or Tab to add new option",
+    width: '100%'
+  }).parent().find('.chosen-container .search-field input[type=text]').keydown(function (evt) {
+    // get keycode
+    const stroke = evt.which != null ? evt.which : evt.keyCode;
+    // If enter or tab key
+    if (stroke === 9 || stroke === 13) {
+      const target = $(evt.target);
+      // get the list of current options
+      const chosenList = target.parents('.chosen-container').find('.chosen-choices li.search-choice > span').map(function () { return $(this).text(); }).get();
+      // get the list of matches from the existing drop-down
+      const matchList = target.parents('.chosen-container').find('.chosen-results li').map(function () { return $(this).text(); }).get();
+      // highlighted option
+      const highlightedList = target.parents('.chosen-container').find('.chosen-results li.highlighted').map(function () { return $(this).text(); }).get();
+      // Get the value which the user has typed in
+      const newString = $.trim(target.val());
+      // if the option does not exists, and the text doesn't exactly match an existing option, and there is not an option highlighted in the list
+
+      if ($.inArray(newString, matchList) < 0 && $.inArray(newString,chosenList) < 0 && highlightedList.length == 0) {
+        // Create a new option and add it to the list (but don't make it selected)
+        const newOption = '<option value="' + newString + '" selected="selected">' + newString + '</option>';
+        const choiceSelect = target.parents('.chosen-container').siblings('.chosen-select');
+        choiceSelect.append(newOption);
+        // trigger the update event
+        choiceSelect.trigger("chosen:updated");
+        // tell chosen to close the list box
+        choiceSelect.trigger("chosen:close");
+        return true;
+      }
+      // otherwise, just let the event bubble up
+      return true;
+    }
+   })
+
+    
+    if (location.host == "homes.cs.washington.edu"){
+      toggleConsent(true);
+      $("#consent").prop("checked",true);
+      $(".debug").show();
+    }
+  });
+  function toggleConsent(checked){
+    if (checked){
+      $("#main-task").show();
+      $("#consent-message").hide();
+      //$("#fullInstructions").collapse("hide");
+    } else {
+      $("#main-task").hide();
+      $("#consent-message").show();
+      //$("#fullInstructions").collapse("show");
+    }
+  }
+  function nextPost(){
+	if (curPostIx < totalPosts) {
+		/*Page between post divs*/
+		var sIx = curPostIx+1;
+		// hide current one
+		$("#task-"+curPostIx).hide();
+		$("#task-"+sIx).show();
+		console.log("HERE")
+		// update the progress bar & post counter
+		$("#post-counter").text(sIx);
+		$("#progressBar").val(100*sIx / totalPosts);
+		curPostIx += 1;
+	}
+  }
+
+  function hideShowDropdown(value) {
+    console.log("VALUE!", $("#dropdown-scale"));
+    if (value == "view") {
+      // $(".input-group mb-3").display = "block"
+      $("#dropdown-scale").hide();
+    } else {
+      $("#dropdown-scale").show();
+    }
+  }
+
+  function countSentences(text){
+    var match = text.match(/[\w\)"][.?!](?:\s|$)/gm);
+    return match === null ? 0: match.length;
+  }
+  function updateCounter(el,minS,maxS,minC,maxC){
+    var name = el.id;
+    var counter = $("#"+name+"-sentence-counter");
+    var text = $(el).prop("value");
+    var nSents = countSentences(text);
+    var nChars = text.length;
+    var warnText = "";
+    counter.css('color', 'black');
+
+    if (nSents >= minS && nChars < maxC)
+      warnText = " &#x2713;";
+    
+    if (nSents > maxS || nChars > maxC) {
+      warnText = " (try shortening it)";
+      counter.css('color', '#721c24');
+    } 
+    counter.html(nSents+" sentences ("+nChars+" characters) detected"+warnText);
+  }
+  
+  
+  //(\r\n|\n|\r)
+  $("#submitButton").on("click",function(e){
+    var ok = true; 
+    for (var i=1; i<4;i++){
+      ok = ok && (curSentIxs[i] == sentLengths[i]-1);
+      if (ok){
+        $("#sent"+i+"-"+curSentIxs[i]+">div>label").removeClass("btn-danger");
+      } else{
+        $("#sent"+i+"-"+curSentIxs[i]+">div>label").addClass("btn-danger");
+      }     
+    }
+    console.log("Finished stories? "+ok);
+
+    ok = ok && checkSummary();
+    console.log("Summary ok? "+ok);
+        
+    ok = ok && ($(":invalid").length == 0);
+    
+    console.log("All fields valid? "+ok);
+    $(":valid").removeClass("invalid");
+    $(".lickert>input:valid").parents().removeClass("invalid");
+    $(".form-check>input:valid").parents().removeClass("invalid");
+    if (!ok) {
+      $("#cantSubmit").show();
+      $(":invalid").addClass("invalid");
+      $(".lickert>input:invalid").parents().addClass("invalid");
+      $(".form-check>input:invalid").parents().addClass("invalid");
+      e.preventDefault();
+    } else{
+      $("#cantSubmit").hide();
+    }
+  });
+
+  
+</script>
+
+<style type="text/css">
+  todo {
+    color: darkred;
+    font-style: italic;
+    font-weight: bold;
+  }
+  todo::before {
+    content: "TO-DO:";
+    
+  }
+  
+  li, h4 {
+	margin-top: 15px
+  }
+  h3, h4, h5, h6 {
+    font-weight: 400;
+  }
+  .section {
+    border-top: solid darkgrey .75px;
+    padding-top: 15px;
+  }
+  .lickert>label{
+    font-size: smaller;
+  }
+  textarea[data-state="open"] {
+    background-color: white; 
+    border-color: #ced4da;
+    color: #495057;
+  }
+  textarea[data-state="invalid"],
+  textarea[data-state="invalid"]:active,
+  textarea[data-state="invalid"]:focus,
+  textarea[data-state="invalid"]:focus-within {
+    background-color: #f5c6cb; 
+    border-color: #D22437;
+    color: #721c24;
+  }
+  
+  input.form-check-input {
+    padding-right: 10px;
+  }
+  ul>li:before{
+    margin-left: -1em;
+    margin-right: .25em;
+  }
+  ul>li.corr:before {
+    content: "\2713";
+  }
+  ul>li.inco:before {
+    content: "\2717";
+  }
+  input.form-check-input.right:after {
+    /*
+    position: absolute;
+    bottom: 0;
+    left: .5em;
+    right: 0;
+    content: "";
+    height: 0.75em;
+    border-top: 1px solid black;*/
+  }
+  
+  .form-check.invalid,
+  .lickert.invalid,
+  input.invalid, 
+  select.invalid {
+    border: .1em solid #D22437;
+    border-radius: .1em;
+    background-color: #f5c6cb;
+    padding: .1em;
+  }
+  .btn.invalid {
+    border: .1em solid #D22437;
+  }
+  .sentence, .sentence:disabled {
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    text-align: left;
+    background-color: whitesmoke;
+    padding: 5px;
+  }
+  .story-display {
+    margin: 2em 0;
+    padding: 1em;
+    border-radius: 1em;
+    border: solid 1px black;
+    background-color: #DCDCDC;  
+  }
+  .btn-left{
+    text-align: left;
+    width: 100%;
+    white-space: normal;
+  }
+  .sent-counter {
+    display: none;
+  }
+  
+  html,body {padding:0;margin:0;}
+	  
+	.wrap {
+	  font:12px Arial, san-serif;
+	}
+	h1.likert-header {
+	  padding-left:4.25%;
+	  margin:20px 0 0;
+	}
+	form .statement {
+	  display:block;
+	  font-size: 14px;
+	  font-weight: bold;
+	  margin-bottom:10px;
+	}
+	form .likert {
+	  list-style:none;
+	  width:100%;
+	  margin:0;
+	  padding:0 0 35px;
+	  display:block;
+	  border-bottom:2px solid #efefef;
+	}
+	form .likert:last-of-type {border-bottom:0;}
+	form .likert:before {
+	  content: '';
+	  position:relative;
+	  top:11px;
+	  left:9.5%;
+	  display:block;
+	  background-color:#efefef;
+	  height:4px;
+	  width:78%;
+	}
+	form .likert li {
+	  display:inline-block;
+	  width:19%;
+	  text-align:center;
+	  vertical-align: top;
+	}
+	form .likert li input[type=radio] {
+	  display:block;
+	  position:relative;
+	  top:0;
+	  left:50%;
+	  margin-left:-6px;
+	  
+	}
+	form .likert li label input {width:100%;}
+	form .buttons {
+	  margin:30px 0;
+	  padding:0 4.25%;
+	  text-align:right
+	} 
+	form .buttons button {
+	  padding: 5px 10px;
+	  background-color: #67ab49;
+	  border: 0;
+	  border-radius: 3px;
+	}
+	form .buttons .clear {background-color: #e9e9e9;}
+	form .buttons .submit {background-color: #67ab49;} 
+	form .buttons .clear:hover {background-color: #ccc;}
+	form .buttons .submit:hover {background-color: #14892c;} 
+
+
+
+
+  /* FLIP CARD CSS - delete if doesn't work right */
+
+.flip-card-container {
+  display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+}
+  .flip-card {
+  background-color: transparent;
+  /* width: 500px; */
+  height: 300px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; 
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: rgba(215, 212, 212, 0.829);
+  color: black;
+}
+
+.flip-card-back {
+  background-color: white;
+  color: black;
+  transform: rotateY(180deg);
+  padding: 20px;
+  padding-right: 40px;
+}
+
+
+/* TWEET STYLE */
+
+.avator {
+  border-radius:100px;
+  width:48px;
+  margin-right: 15px;
+}
+
+
+.tweet-wrap {
+  max-width:490px;
+  background: #fff;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius:3px;
+  padding: 30px;
+  border-bottom: 1px solid #e6ecf0;
+  border-top: 1px solid #e6ecf0;
+}
+
+.tweet-header {
+  display: flex;
+  align-items:flex-start;
+  font-size:14px;
+}
+.tweet-header-info {
+  font-weight:bold;
+}
+.tweet-header-info span {
+  color:#657786;
+  font-weight:normal;
+  margin-left: 5px;
+}
+.tweet-header-info p {
+  font-weight:normal;
+  margin-top: 5px;
+  
+}
+.tweet-img-wrap {
+  padding-left: 60px;
+}
+
+.tweet-info-counts {
+  display: flex;
+  margin-left: 60px;
+  margin-top: 10px;
+}
+.tweet-info-counts div {
+  display: flex;
+  margin-right: 20px;
+}
+.tweet-info-counts div svg {
+  color:#657786;
+  margin-right: 10px;
+}
+
+</style>
+
+
+
+
+
+
